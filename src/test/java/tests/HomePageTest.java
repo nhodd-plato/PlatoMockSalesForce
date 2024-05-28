@@ -93,25 +93,25 @@ public class HomePageTest {
         Assert.assertEquals(discussionsTab, "DISCUSSIONS");
     }
 
-    @Test (priority = 8)
+    @Test (priority = 11)
     public void checkMyFeedTabText(){
         String myFeedTab = driver.findElement(By.xpath(LandingPage.myFeedTab())).getText();
         Assert.assertEquals(myFeedTab, "MY FEED");
     }
 
-    @Test (priority = 11)
+    @Test (priority = 12)
     public void checkAskQuestionFooterText(){
         String askQuestionFooter = driver.findElement(By.xpath(LandingPage.askQuestionFooter())).getText();
         Assert.assertEquals(askQuestionFooter, "Ask a Question");
     }
 
-    @Test (priority = 12)
+    @Test (priority = 13)
     public void checkContactSupportFooterText(){
         String contactSupportFooter = driver.findElement(By.xpath(LandingPage.contactSupportFooter())).getText();
         Assert.assertEquals(contactSupportFooter, "Contact Support");
     }
 
-    @Test (priority = 13)
+    @Test (priority = 14)
     public void checkSearchBar(){
         WebElement searchBar = driver.findElement(By.xpath(LandingPage.searchBar()));
         if(searchBar == null){
