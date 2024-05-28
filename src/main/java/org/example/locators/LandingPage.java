@@ -18,19 +18,44 @@ public class LandingPage{
         return "//*[@id=\"3\"]";
     }
 
-    public static String searchButton(){
-        return "/html/body/div[3]/div[1]/div[1]/div/div/div/div[3]/div[4]/div/div[1]/div/div[1]/button/lightning-primitive-icon";
-    }
-
     public static String notificationButton(){
         return "/html/body/div[3]/div[1]/div[1]/div/div/div/div[3]/div[4]/div/div[1]/div/div[1]/button";
     }
 
     public static String profileButton(){
-        return "/html/body/div[3]/div[1]/div[1]/div/div/div/div[3]/div[4]/div/div[3]/div/div/div/community_user-user-profile-menu/div/button/div/div[1]";
+        return "/html/body/div[3]/div[1]/div[1]/div/div/div/div[3]/div[4]/div/div[2]/div/div/div/community_user-user-profile-menu/div/button/div/div/span/img";
     }
 
-    public static String pageTitle(){ return "/html/body/div[3]/div[1]/div[2]/div/div/div/div[3]/div/div/h2"; }
+    public static String pageSubtitle(){
+        return "/html/body/div[3]/div[2]/div/div[1]/div/div/section/h1/span/span";
+    }
 
+    public static String featuredTab(){
+        return "/html/body/div[3]/div[2]/div/div[2]/div[1]/div/div/div/div/ul/li[1]/a/span[2]";
+    }
+
+    public static String discussionsTab(){
+        return "/html/body/div[3]/div[2]/div/div[2]/div[1]/div/div/div/div/ul/li[2]/a/span[2]";
+    }
+
+    public static String myFeedTab(){
+        return "/html/body/div[3]/div[2]/div/div[2]/div[1]/div/div/div/div/ul/li[3]/a/span[2]";
+    }
+
+    public static String askQuestionFooter(){
+        return "//*[@id=\"askCommunity\"]/button";
+    }
+
+    public static String contactSupportFooter(){
+        return "//*[@id=\"contactSupport\"]/button";
+    }
+
+    public static String pageTitle(){
+        return "/html/body/div[3]/div[1]/div[2]/div/div/div/div[3]/div/div/h2";
+    }
+
+    public static String searchBar(){
+        return "//*[@id=\"129:0-input\"]";
+    }
 
 }

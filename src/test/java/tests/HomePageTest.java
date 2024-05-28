@@ -54,14 +54,6 @@ public class HomePageTest {
     }
 
     @Test (priority = 5)
-    public void checkSearchButton(){
-        WebElement searchButton = driver.findElement(By.xpath(LandingPage.searchButton()));
-        if(searchButton == null){
-            Assert.fail();
-        }
-    }
-
-    @Test (priority = 6)
     public void checkNotificationButton(){
         WebElement notificationButton = driver.findElement(By.xpath(LandingPage.notificationButton()));
         if(notificationButton == null){
@@ -80,11 +72,56 @@ public class HomePageTest {
     @Test (priority = 7)
     public void checkTitleText(){
         String title = driver.findElement(By.xpath(LandingPage.pageTitle())).getText();
-        Assert.assertEquals(title, "How can we help you with?");
+        Assert.assertEquals(title, "What can we help you with?");
+    }
+
+    @Test (priority = 8)
+    public void checkSubTitleText(){
+        String subTitle = driver.findElement(By.xpath(LandingPage.pageSubtitle())).getText();
+        Assert.assertEquals(subTitle, "We are here to assist you!");
+    }
+
+    @Test (priority = 9)
+    public void checkFeaturedTabText(){
+        String featuredTab = driver.findElement(By.xpath(LandingPage.featuredTab())).getText();
+        Assert.assertEquals(featuredTab, "FEATURED");
+    }
+
+    @Test (priority = 10)
+    public void checkDiscussionsTabText(){
+        String discussionsTab = driver.findElement(By.xpath(LandingPage.discussionsTab())).getText();
+        Assert.assertEquals(discussionsTab, "DISCUSSIONS");
+    }
+
+    @Test (priority = 8)
+    public void checkMyFeedTabText(){
+        String myFeedTab = driver.findElement(By.xpath(LandingPage.myFeedTab())).getText();
+        Assert.assertEquals(myFeedTab, "MY FEED");
+    }
+
+    @Test (priority = 11)
+    public void checkAskQuestionFooterText(){
+        String askQuestionFooter = driver.findElement(By.xpath(LandingPage.askQuestionFooter())).getText();
+        Assert.assertEquals(askQuestionFooter, "Ask a Question");
+    }
+
+    @Test (priority = 12)
+    public void checkContactSupportFooterText(){
+        String contactSupportFooter = driver.findElement(By.xpath(LandingPage.contactSupportFooter())).getText();
+        Assert.assertEquals(contactSupportFooter, "Contact Support");
+    }
+
+    @Test (priority = 13)
+    public void checkSearchBar(){
+        WebElement searchBar = driver.findElement(By.xpath(LandingPage.searchBar()));
+        if(searchBar == null){
+            Assert.fail();
+        }
     }
 
     @AfterClass
     public void closeBrowser(){
         driver.close();
     }
+
 }
