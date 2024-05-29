@@ -1,4 +1,4 @@
-package tests;
+package tests.sanity;
 
 import org.example.locators.LandingPage;
 import org.example.locators.LoginPage;
