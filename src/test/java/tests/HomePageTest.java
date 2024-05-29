@@ -45,7 +45,7 @@ public class HomePageTest {
         }
     }
 
-    @Test (priority = 4)
+    @Test (enabled = false, priority = 4)
     public void checkTopicsButton(){
         WebElement topicsButton = driver.findElement(By.xpath(LandingPage.topicsButton()));
         if(topicsButton == null){

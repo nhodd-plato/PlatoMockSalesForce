@@ -6,17 +6,13 @@ public class LandingPage{
         return "//*[@id=\"0\"]";
     }
 
-    public static String myProfileButton(){
-        return "//*[@id=\"1\"]";
-    }
+    public static String myProfileButton(){ return "//*[@id=\"1\"]"; }
 
     public static String raiseAnIssueButton(){
         return "//*[@id=\"2\"]";
     }
 
-    public static String topicsButton(){
-        return "//*[@id=\"3\"]";
-    }
+    public static String topicsButton(){return "//*[@id=\"3\"]"; }
 
     public static String notificationButton(){
         return "/html/body/div[3]/div[1]/div[1]/div/div/div/div[3]/div[4]/div/div[1]/div/div[1]/button";
