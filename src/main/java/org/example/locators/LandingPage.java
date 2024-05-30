@@ -34,6 +34,10 @@ public class LandingPage{
         return "/html/body/div[3]/div[2]/div/div[2]/div[1]/div/div/div/div/ul/li[2]/a/span[2]";
     }
 
+    public static String RaiseAnIssueTab(){
+        return "/html/body/div[3]/div[1]/div[1]/div/div/div/div[3]/div[2]/div/div/nav/ul/li[3]/a";
+    }
+
     public static String myFeedTab(){
         return "/html/body/div[3]/div[2]/div/div[2]/div[1]/div/div/div/div/ul/li[3]/a/span[2]";
     }
