@@ -4,12 +4,12 @@ import org.example.locators.LandingPage;
 import org.example.locators.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import java.time.Duration;
 
 public class HomePageTest {
 
@@ -23,50 +23,39 @@ public class HomePageTest {
 
     @Test (priority = 1)
     public void checkHomeButton(){
-        WebElement homeButton = driver.findElement(By.xpath(LandingPage.homeButton()));
-        if(homeButton == null){
-            Assert.fail();
-        }
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        boolean isPresent = !driver.findElements(By.xpath(LandingPage.homeButton())).isEmpty();
+        Assert.assertTrue(isPresent);
     }
 
     @Test (priority = 2)
     public void checkMyProfileButton(){
-        WebElement myProfileButton = driver.findElement(By.xpath(LandingPage.myProfileButton()));
-        if(myProfileButton == null){
-            Assert.fail();
-        }
+        boolean isPresent = !driver.findElements(By.xpath(LandingPage.myProfileButton())).isEmpty();
+        Assert.assertTrue(isPresent);
     }
 
     @Test (priority = 3)
     public void checkRaiseSupportIssueButton(){
-        WebElement raiseAnIssueButton = driver.findElement(By.xpath(LandingPage.raiseAnIssueButton()));
-        if(raiseAnIssueButton == null){
-            Assert.fail();
-        }
+        boolean isPresent = !driver.findElements(By.xpath(LandingPage.raiseAnIssueButton())).isEmpty();
+        Assert.assertTrue(isPresent);
     }
 
     @Test (enabled = false, priority = 4)
     public void checkTopicsButton(){
-        WebElement topicsButton = driver.findElement(By.xpath(LandingPage.topicsButton()));
-        if(topicsButton == null){
-            Assert.fail();
-        }
+        boolean isPresent = !driver.findElements(By.xpath(LandingPage.topicsButton())).isEmpty();
+        Assert.assertTrue(isPresent);
     }
 
     @Test (priority = 5)
     public void checkNotificationButton(){
-        WebElement notificationButton = driver.findElement(By.xpath(LandingPage.notificationButton()));
-        if(notificationButton == null){
-            Assert.fail();
-        }
+        boolean isPresent = !driver.findElements(By.xpath(LandingPage.notificationButton())).isEmpty();
+        Assert.assertTrue(isPresent);
     }
 
     @Test (priority = 6)
     public void checkProfileButton(){
-        WebElement profileButton = driver.findElement(By.xpath(LandingPage.profileButton()));
-        if(profileButton == null){
-            Assert.fail();
-        }
+        boolean isPresent = !driver.findElements(By.xpath(LandingPage.profileButton())).isEmpty();
+        Assert.assertTrue(isPresent);
     }
 
     @Test (priority = 7)
@@ -113,10 +102,8 @@ public class HomePageTest {
 
     @Test (priority = 14)
     public void checkSearchBar(){
-        WebElement searchBar = driver.findElement(By.xpath(LandingPage.searchBar()));
-        if(searchBar == null){
-            Assert.fail();
-        }
+        boolean isPresent = !driver.findElements(By.xpath(LandingPage.searchBar())).isEmpty();
+        Assert.assertTrue(isPresent);
     }
 
     @AfterClass
