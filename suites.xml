@@ -1,10 +1,30 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Sanity">
-    <test name="Sanity">
-        <classes>
-            <class name="tests.sanity.HomePageTest"/>
-            <class name="tests.sanity.MyProfileTest"/>
-            <class name="tests.sanity.RaiseAnIssueTest"/>
-        </classes>
+    <test name="ChromeSanity">
+        <parameter name="browser" value="Chrome">
+            <classes>
+                <class name="tests.sanity.HomePageTest"/>
+                <class name="tests.sanity.MyProfileTest"/>
+                <class name="tests.sanity.RaiseAnIssueTest"/>
+            </classes>
+        </parameter>
+    </test>
+    <test name="EdgeSanity">
+        <parameter name="browser" value="Edge">
+            <classes>
+                <class name="tests.sanity.HomePageTest"/>
+                <class name="tests.sanity.MyProfileTest"/>
+                <class name="tests.sanity.RaiseAnIssueTest"/>
+            </classes>
+        </parameter>
+    </test>
+    <test name="FirefoxSanity">
+        <parameter name="browser" value="FireFox">
+            <classes>
+                <class name="tests.sanity.HomePageTest"/>
+                <class name="tests.sanity.MyProfileTest"/>
+                <class name="tests.sanity.RaiseAnIssueTest"/>
+            </classes>
+        </parameter>
     </test>
 </suite>

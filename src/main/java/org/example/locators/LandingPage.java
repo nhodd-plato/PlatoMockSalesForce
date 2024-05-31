@@ -35,7 +35,7 @@ public class LandingPage{
     }
 
     public static String RaiseAnIssueTab(){
-        return "/html/body/div[3]/div[1]/div[1]/div/div/div/div[3]/div[2]/div/div/nav/ul/li[3]/a";
+        return "//*[@id=\"2\"]";
     }
 
     public static String myFeedTab(){

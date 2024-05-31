@@ -6,17 +6,43 @@ import org.example.locators.RaiseAnIssue;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class RaiseAnIssueTest {
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver;
     LoginPage loginPage = new LoginPage();
 
     @BeforeTest
-    public void beforeTest(){
+    @Parameters("browser")
+    public void setup(String browser) throws Exception{
+        if(browser.equalsIgnoreCase("Chrome")){
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless");
+            driver = new ChromeDriver(options);
+        }
+        else if(browser.equalsIgnoreCase("FireFox")){
+            FirefoxOptions options = new FirefoxOptions();
+            options.addArguments("--headless");
+            driver = new FirefoxDriver(options);
+        }
+        else if(browser.equalsIgnoreCase("Edge")){
+            EdgeOptions options = new EdgeOptions();
+            options.addArguments("--headless");
+            driver = new EdgeDriver(options);
+        }
+        else{
+            throw new Exception("Browser is not correct");
+        }
+
         loginPage.login(driver,loginPage);
         driver.findElement(By.xpath(LandingPage.RaiseAnIssueTab())).click();
     }
@@ -143,6 +169,6 @@ public class RaiseAnIssueTest {
 
     @AfterClass
     public void closeBrowser(){
-        driver.close();
+        driver.quit();
     }
 }
