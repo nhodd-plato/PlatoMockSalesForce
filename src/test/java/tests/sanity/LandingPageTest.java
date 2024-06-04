@@ -11,20 +11,18 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
 import java.time.Duration;
 
-public class HomePageTest {
+public class LandingPageTest {
 
     WebDriver driver;
     LoginPage loginPage = new LoginPage();
 
     @BeforeTest
     @Parameters("browser")
-    public void setup(String browser) throws Exception{
+    public void setup(@Optional("browser") String browser){
         if(browser.equalsIgnoreCase("Chrome")){
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless");
@@ -41,7 +39,7 @@ public class HomePageTest {
             driver = new EdgeDriver(options);
         }
         else{
-            throw new Exception("Browser is not correct");
+            driver = new ChromeDriver(); //default browser
         }
 
         loginPage.login(driver,loginPage);

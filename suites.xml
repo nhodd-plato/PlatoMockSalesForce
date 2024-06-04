@@ -3,7 +3,7 @@
     <test name="ChromeSanity">
         <parameter name="browser" value="Chrome">
             <classes>
-                <class name="tests.sanity.HomePageTest"/>
+                <class name="tests.sanity.LandingPageTest"/>
                 <class name="tests.sanity.MyProfileTest"/>
                 <class name="tests.sanity.RaiseAnIssueTest"/>
             </classes>
@@ -12,7 +12,7 @@
     <test name="EdgeSanity">
         <parameter name="browser" value="Edge">
             <classes>
-                <class name="tests.sanity.HomePageTest"/>
+                <class name="tests.sanity.LandingPageTest"/>
                 <class name="tests.sanity.MyProfileTest"/>
                 <class name="tests.sanity.RaiseAnIssueTest"/>
             </classes>
@@ -21,7 +21,7 @@
     <test name="FirefoxSanity">
         <parameter name="browser" value="FireFox">
             <classes>
-                <class name="tests.sanity.HomePageTest"/>
+                <class name="tests.sanity.LandingPageTest"/>
                 <class name="tests.sanity.MyProfileTest"/>
                 <class name="tests.sanity.RaiseAnIssueTest"/>
             </classes>
