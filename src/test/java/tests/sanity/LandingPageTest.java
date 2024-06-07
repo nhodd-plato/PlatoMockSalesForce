@@ -12,14 +12,20 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.Assert;
 import org.testng.annotations.*;
-
 import java.time.Duration;
 
+/*
+ This file contains an aesthetic tests for the Landing page
+*/
 public class LandingPageTest {
 
     WebDriver driver;
     LoginPage loginPage = new LoginPage();
 
+    /*
+     This method allows the suites.xml file to run these tests on multiple browsers
+     (if browser isn't specified, it defaults to Chrome)
+    */
     @BeforeTest
     @Parameters("browser")
     public void setup(@Optional("browser") String browser){

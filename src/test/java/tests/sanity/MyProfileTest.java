@@ -14,14 +14,20 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.Assert;
 import org.testng.annotations.*;
-
 import java.time.Duration;
 
+/*
+ This file contains an aesthetic tests for My Profile page
+*/
 public class MyProfileTest {
 
     WebDriver driver;
     LoginPage loginPage = new LoginPage();
 
+    /*
+     This method allows the suites.xml file to run these tests on multiple browsers
+     (if browser isn't specified, it defaults to Chrome)
+    */
     @BeforeTest
     @Parameters("browser")
     public void setup(@Optional("browser") String browser){
@@ -124,13 +130,6 @@ public class MyProfileTest {
         Assert.assertEquals(pollSubTab, "Poll");
     }
 
-    // the element uses a dynamic value every time the page is loaded so not sure how to access this
-//    @Test (priority = 12)
-//    public void pollSubTabQuestionText(){
-//        String pollSubTabQuestion = driver.findElement(By.xpath(MyProfile.pollSubTabQuestion())).getText();
-//        Assert.assertEquals(pollSubTabQuestion, "Question");
-//    }
-
     @Test (priority = 13)
     public void pollSubTabChoiceOne(){
         String pollSubTabChoiceOne = driver.findElement(By.xpath(MyProfile.pollSubTabChoiceOne())).getText();
@@ -202,7 +201,7 @@ public class MyProfileTest {
 
     @Test (priority = 23)
     public void casesTabCaseNumber(){
-        String casesNumber = driver.findElement(By.xpath(MyProfile.casesNumber())).getText();
+        String casesNumber = driver.findElement(By.xpath(MyProfile.casesNumberText())).getText();
         Assert.assertTrue(casesNumber.contains("Case Number"));
     }
 

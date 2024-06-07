@@ -14,11 +14,19 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
+/*
+ This file contains an accessibility scan for the login page
+*/
 public class A11yLoginTest {
 
     AxeBuilder axeBuilder = new AxeBuilder();
     WebDriver driver = new ChromeDriver();
 
+    /*
+     This test uses the axe core library to scan the page for accessibility violations.
+     If the page is not violation free, the violations will be displayed in the console
+     and the test will fail.
+    */
     @Test (priority = 1)
     public void loginPage() throws JsonProcessingException {
         Results axeResults;

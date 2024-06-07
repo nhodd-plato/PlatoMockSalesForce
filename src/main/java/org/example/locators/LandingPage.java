@@ -1,5 +1,9 @@
 package org.example.locators;
 
+/*
+ This file contains all the locators associated with the landing page
+ needed to run the landing page tests
+*/
 public class LandingPage{
 
     public static String homeButton(){

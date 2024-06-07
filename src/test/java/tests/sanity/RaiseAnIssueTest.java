@@ -14,10 +14,17 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+/*
+ This file contains an aesthetic tests for the Raise an issue page
+*/
 public class RaiseAnIssueTest {
     WebDriver driver;
     LoginPage loginPage = new LoginPage();
 
+    /*
+     This method allows the suites.xml file to run these tests on multiple browsers
+     (if browser isn't specified, it defaults to Chrome)
+    */
     @BeforeTest
     @Parameters("browser")
     public void setup(@Optional("browser") String browser){
@@ -128,37 +135,51 @@ public class RaiseAnIssueTest {
         Assert.assertTrue(isPresent);
     }
 
-    @Test (priority = 15)
+    @Test(priority = 15)
+    public void defaultPriority(){
+        String expected = "Low";
+        String actual = driver.findElement(By.xpath(RaiseAnIssue.priorityDropDown())).getText();
+        Assert.assertEquals(actual,expected);
+    }
+
+    @Test (priority = 16)
     public void escalatedText(){
         String caseOrigin = driver.findElement(By.xpath(RaiseAnIssue.escalated())).getText();
         Assert.assertEquals(caseOrigin, "Escalated");
     }
 
-    @Test (priority = 16)
+    @Test (priority = 17)
     public void escalatedCheckBox(){
         boolean isPresent = !driver.findElements(By.xpath(RaiseAnIssue.escalatedCheckBox())).isEmpty();
         Assert.assertTrue(isPresent);
     }
 
-    @Test (priority = 17)
+    @Test (priority = 18)
     public void statusText(){
         String caseOrigin = driver.findElement(By.xpath(RaiseAnIssue.status())).getText();
         Assert.assertEquals(caseOrigin, "Status");
     }
 
-    @Test (priority = 18)
+    @Test (priority = 19)
     public void statusDropDown(){
         boolean isPresent = !driver.findElements(By.xpath(RaiseAnIssue.statusDropDown())).isEmpty();
         Assert.assertTrue(isPresent);
     }
 
-    @Test (priority = 19)
+    @Test(priority = 20)
+    public void defaultStatus(){
+        String expected = "New";
+        String actual = driver.findElement(By.xpath(RaiseAnIssue.statusDropDown())).getText();
+        Assert.assertEquals(actual,expected);
+    }
+
+    @Test (priority = 21)
     public void uploadFileLink(){
         boolean isPresent = !driver.findElements(By.xpath(RaiseAnIssue.uploadFileLink())).isEmpty();
         Assert.assertTrue(isPresent);
     }
 
-    @Test (priority = 20)
+    @Test (priority = 22)
     public void submitButton(){
         boolean isPresent = !driver.findElements(By.xpath(RaiseAnIssue.submitButton())).isEmpty();
         Assert.assertTrue(isPresent);

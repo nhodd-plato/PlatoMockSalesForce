@@ -1,5 +1,9 @@
 package org.example.locators;
 
+/*
+ This file contains all the locators associated with my profile page
+ needed to run the profile page tests
+*/
 public class MyProfile {
 
     public static String profileIcon(){
@@ -52,10 +56,6 @@ public class MyProfile {
         return "/html/body/div[3]/div[2]/div/div[2]/div/div/div/div/div[1]/div[2]/div/div[2]/div/section[1]/div[1]/div/div/ul/li[2]/a/span[2]";
     }
 
-//    public static String pollSubTabQuestion(){
-//        return "//*[@id=\"outerContainer\"]/div/label/";
-//    }
-
     public static String pollSubTabChoiceOne(){
         return "/html/body/div[3]/div[2]/div/div[2]/div/div/div/div/div[1]/div[2]/div/div[2]/div/section/div[1]/div/section[2]/div/div[3]/div/div/div/div[1]/section/div/ul/li[1]/div/div/label/span";
     }
@@ -98,8 +98,12 @@ public class MyProfile {
         return "/html/body/div[3]/div[2]/div/div[2]/div/div/div/div/div[1]/div[2]/div/div[2]/div/section[2]/div/div[1]/div[1]";
     }
 
-    public static String casesNumber(){
+    public static String casesNumberText(){
         return "/html/body/div[3]/div[2]/div/div[2]/div/div/div/div/div[1]/div[2]/div/div[2]/div/section[2]/div/div[2]/div/div[1]/table/thead/tr/th[1]/a";
+    }
+
+    public static String caseNumber(){
+        return "/html/body/div[3]/div[2]/div/div[2]/div/div/div/div/div[1]/div[2]/div/div[2]/div/section[2]/div/div[2]/div/div[1]/table/tbody/tr[1]/td[1]/a";
     }
 
     public static String contactName(){

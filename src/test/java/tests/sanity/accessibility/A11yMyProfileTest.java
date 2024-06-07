@@ -14,14 +14,22 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
-
 import java.time.Duration;
 import java.util.List;
 
+/*
+ This file contains an accessibility scan for my profile page
+*/
 public class A11yMyProfileTest {
+
     AxeBuilder axeBuilder = new AxeBuilder();
     WebDriver driver = new ChromeDriver();
 
+    /*
+     This test uses the axe core library to scan the page for accessibility violations.
+     If the page is not violation free, the violations will be displayed in the console
+     and the test will fail.
+    */
     @Test(priority = 1)
     public void myProfilePage() throws JsonProcessingException {
         Results axeResults;

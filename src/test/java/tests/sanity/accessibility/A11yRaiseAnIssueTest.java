@@ -18,10 +18,19 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
+/*
+ This file contains an accessibility scan for the Raise an issue page
+*/
 public class A11yRaiseAnIssueTest {
+
     AxeBuilder axeBuilder = new AxeBuilder();
     WebDriver driver = new ChromeDriver();
 
+    /*
+     This test uses the axe core library to scan the page for accessibility violations.
+     If the page is not violation free, the violations will be displayed in the console
+     and the test will fail.
+    */
     @Test(priority = 1)
     public void raiseAnIssuePage() throws JsonProcessingException {
         Results axeResults;
