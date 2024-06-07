@@ -25,6 +25,7 @@ public class LoginPage{
 
     /*
     This method logs into the website and is used by every test
+    **********NOTE: YOU HAVE TO ENTER YOUR OWN LOGIN CREDENTIALS***********
     @param driver: is the webDriver created in each test and used to log in
     @param loginPage: is the login object used to access login elements
     */
@@ -34,7 +35,7 @@ public class LoginPage{
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
         WebElement userName = driver.findElement(By.xpath(loginPage.userName()));
-        userName.sendKeys("nick.hodd@platotech.com");
+        userName.sendKeys("<username>");
 
         WebElement password = driver.findElement(By.xpath(loginPage.password()));
         password.sendKeys("<password>");
