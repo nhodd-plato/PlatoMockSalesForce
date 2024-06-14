@@ -40,6 +40,7 @@ public class RaiseAnIssueFormTest {
         String successCaseNumber;
         String myProfileCaseNumber;
 
+
         driver.findElement(By.xpath(RaiseAnIssue.caseOriginDropdown())).click();
         driver.findElement(By.xpath(RaiseAnIssue.caseOriginPhone())).click();
 
@@ -80,12 +81,14 @@ public class RaiseAnIssueFormTest {
         driver.findElement(By.xpath(LandingPage.RaiseAnIssueTab())).click();
 
         driver.findElement(By.xpath(RaiseAnIssue.caseOriginDropdown())).click();
+
         driver.findElement(By.xpath(RaiseAnIssue.caseOriginPhone())).click();
 
         driver.findElement(By.xpath(RaiseAnIssue.caseReasonDropDown())).click();
         driver.findElement(By.xpath(RaiseAnIssue.caseReasonPerformance())).click();
 
         driver.findElement(By.xpath(RaiseAnIssue.productDropdown())).click();
+
         driver.findElement(By.xpath(RaiseAnIssue.productDropdownLaptop())).click();
 
         driver.findElement(By.xpath(RaiseAnIssue.descriptionTextBox())).sendKeys("Test");
